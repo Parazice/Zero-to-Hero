@@ -1,6 +1,7 @@
 package zerotohero;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 /**
  *
@@ -10,7 +11,7 @@ import java.awt.*;
 public class MainMenu extends JPanel {
     ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
     public MainMenu(Game game) {
-        //Make logo & Adjust MainMenu Panel.
+        //Create logo & Adjust MainMenu Panel.
         this.setLayout(new GridLayout(2,1));
         JPanel logoPanel = new JPanel();
         logoPanel.setBounds(373, 1, 534, 400);
@@ -19,7 +20,7 @@ public class MainMenu extends JPanel {
         logoPanel.setOpaque(false);
         this.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-        //Make small JPanel to contain buttons.
+        //Create small JPanel to contain buttons.
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBounds(373, 400, 300, 200);
         buttonPanel.setOpaque(false);
@@ -28,7 +29,7 @@ public class MainMenu extends JPanel {
         buttonPanel.setAlignmentX(Component.BOTTOM_ALIGNMENT);
         buttonPanel.setPreferredSize(new Dimension(1280,200));
         
-        //Make buttons
+        //Create buttons
         JButton start = new JButton("   Start   ");
         start.addActionListener(e -> game.switchToTraining());
         start.setAlignmentX(Component.CENTER_ALIGNMENT);
