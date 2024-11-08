@@ -7,7 +7,7 @@ import java.awt.*;
  * @author paftipon
  */
 public class GameOver extends JPanel{
-    private ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
+    private ImageComponent bg = new ImageComponent("Boss BG.png",1280, 720, 0, 0);
     private JPanel mainPanel;
     private JLabel gameOver;
     private JButton retry;

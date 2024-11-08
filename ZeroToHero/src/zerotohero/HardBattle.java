@@ -7,7 +7,7 @@ import java.awt.*;
  * @author Parazice
  */
 public class HardBattle extends JPanel {
-    private ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
+    private ImageComponent bg = new ImageComponent("Boss BG.png",1280, 720, 0, 0);
     private ImageComponent actionPanelBG = new ImageComponent("Training Panel.png",930,520,175,450);
     static Hero hero = new Hero(TrainingScreen.hero);
     static Demonlord demon = new Demonlord(7500,50,125);
@@ -41,6 +41,9 @@ public class HardBattle extends JPanel {
     private JButton manaBurst;
     
     public HardBattle(Game game) {
+        BattleScreen.hero.hp = BattleScreen.hero.maxHP;
+        BattleScreen.hero.mana = BattleScreen.hero.maxMana;
+        demon.hp = demon.maxHP;
         //Set screen layout.
         BoxLayout screenBox = new BoxLayout(this,BoxLayout.Y_AXIS);
         this.setLayout(screenBox);
@@ -288,7 +291,7 @@ public class HardBattle extends JPanel {
                     if (!demon.isCharge) {
                         demonImg.moveUpDown();
                     }
-                    if (hero.hp <= 0) {
+                    if (BattleScreen.hero.hp <= 0) {
                         Timer delay = new Timer(500, fade -> {
                             game.hardToOver();
                         });
@@ -607,7 +610,7 @@ public class HardBattle extends JPanel {
                     demonHealthBar.setValue(demon.hp);
                     if (demon.hp <= 0) {
                             Timer delay = new Timer(500, fade -> {
-                            game.toWin();
+                            game.hardToWin();
                         });
                         delay.setRepeats(false);
                         delay.start();
@@ -619,7 +622,7 @@ public class HardBattle extends JPanel {
                     heroHealthBar.setValue(BattleScreen.hero.hp);
                     if (BattleScreen.hero.hp <= 0) {
                         Timer delay = new Timer(500, fade -> {
-                            game.toOver();
+                            game.hardToOver();
                         });
                         delay.setRepeats(false);
                         delay.start();

@@ -8,7 +8,7 @@ import java.awt.*;
  */
 
 public class TrainingScreen extends JPanel {
-    private ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
+    private ImageComponent bg = new ImageComponent("Menu BG.png",1280, 720, 0, 0);
     private ImageComponent trainPanelBG = new ImageComponent("Training Panel.png",735,520,425,65);
     static Hero hero = new Hero();
     private static dayCounter days = new dayCounter();

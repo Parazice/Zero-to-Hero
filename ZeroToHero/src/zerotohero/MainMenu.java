@@ -8,7 +8,7 @@ import java.awt.*;
  */
 
 public class MainMenu extends JPanel {
-    private ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
+    private ImageComponent bg = new ImageComponent("Menu BG.png",1280, 720, 0, 0);
     public MainMenu(Game game) {
         //Create logo & Adjust MainMenu Panel.
         this.setLayout(new GridLayout(2,1));

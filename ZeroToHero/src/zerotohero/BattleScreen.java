@@ -7,7 +7,7 @@ import java.awt.*;
  * @author Parazice
  */
 public class BattleScreen extends JPanel {
-    private ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
+    private ImageComponent bg = new ImageComponent("Boss BG.png",1280, 720, 0, 0);
     private ImageComponent actionPanelBG = new ImageComponent("Training Panel.png",930,520,175,450);
     static Hero hero = new Hero(TrainingScreen.hero);
     static Demonlord demon = new Demonlord();
