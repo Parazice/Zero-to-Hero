@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
+import javax.swing.Timer;
 
 public class ImageComponent extends JComponent {
     private BufferedImage image;
@@ -61,4 +62,37 @@ public class ImageComponent extends JComponent {
     public Dimension getPreferredSize() {
         return new Dimension(width, height);
     }
+    
+    public BufferedImage getImage() {
+        return image;
+    }
+    public void moveUpDown() {
+        Timer moveUp = new Timer(20, null);
+        moveUp.addActionListener(evt -> {
+            if (this.yCoor > -20) {
+                this.yCoor -= 2;
+                repaint();
+            } else {
+                moveUp.stop();
+                Timer moveDown = new Timer(20, null);
+                moveDown.addActionListener(evt2 -> {
+                    if (this.yCoor < 0) {
+                        this.yCoor += 2;
+                        repaint();
+                    } else {
+                        moveDown.stop();
+                    }
+                });
+                moveDown.start();
+            }
+        });
+        moveUp.start();
+    }
+    
+//    public void moveRight() {
+//        Timer moveRight = new Timer(50, null);
+//        moveRight.addActionListener(evt -> {
+//            
+//        })
+//    }
 }

@@ -1,7 +1,6 @@
 package zerotohero;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 /**
  *
@@ -9,7 +8,7 @@ import java.awt.event.*;
  */
 
 public class MainMenu extends JPanel {
-    ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
+    private ImageComponent bg = new ImageComponent("mrbeast anime op.jpeg",1280, 720, 0, 0);
     public MainMenu(Game game) {
         //Create logo & Adjust MainMenu Panel.
         this.setLayout(new GridLayout(2,1));
